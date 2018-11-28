@@ -70,6 +70,9 @@ import static com.voximplant.reactnative.Constants.SEND_MESSAGE;
 import static com.voximplant.reactnative.Constants.REQUEST_ON_CALL_CONNECTED;
 import static com.voximplant.reactnative.Constants.REQUEST_ON_CALL_START;
 
+import static com.voximplant.reactnative.Constants.REQUEST_ON_CALL_CONNECTED;
+import static com.voximplant.reactnative.Constants.REQUEST_ON_CALL_START;
+
 class Utils {
 
 	static List<String> createArrayList(ReadableArray readableArray) {
@@ -323,16 +326,6 @@ class Utils {
 		}
 	}
 
-	static MessengerNotifications convertStringToMessengerNotification(String notification) {
-    	switch (notification) {
-			case EDIT_MESSAGE:
-				return MessengerNotifications.ON_EDIT_MESSAGE;
-			case SEND_MESSAGE:
-				default:
-				return MessengerNotifications.ON_SEND_MESSAGE;
-		}
-	}
-
 	static RequestAudioFocusMode convertStringToRequestAudioFocusMode(String requestAudioFocusMode) {
 		switch (requestAudioFocusMode) {
 			case REQUEST_ON_CALL_CONNECTED:
@@ -340,119 +333,6 @@ class Utils {
 			case REQUEST_ON_CALL_START:
 			default:
 				return RequestAudioFocusMode.REQUEST_ON_CALL_START;
-		}
-	}
-
-	static String convertMessengerNotificationsToString(MessengerNotifications notification) {
-    	switch (notification) {
-			case ON_EDIT_MESSAGE:
-				return EDIT_MESSAGE;
-			case ON_SEND_MESSAGE:
-				default:
-				return SEND_MESSAGE;
-		}
-	}
-
-	static String convertMessengerActionToString(MessengerAction action) {
-    	switch (action) {
-			case ADD_PARTICIPANTS:
-			    return EVENT_MES_ACTION_ADD_PARTICIPANTS;
-			case CREATE_CONVERSATION:
-			    return EVENT_MES_ACTION_CREATE_CONVERSATION;
-			case EDIT_CONVERSATION:
-				return EVENT_MES_ACTION_EDIT_CONVERSATION;
-			case EDIT_MESSAGE:
-				return EVENT_MES_ACTION_EDIT_MESSAGE;
-			case EDIT_PARTICIPANTS:
-				return EVENT_MES_ACTION_EDIT_PARTICIPANTS;
-			case EDIT_USER:
-				return EVENT_MES_ACTION_EDIT_USER;
-			case GET_CONVERSATION:
-			    return EVENT_MES_ACTION_GET_CONVERSATION;
-			case GET_CONVERSATIONS:
-				return EVENT_MES_ACTION_GET_CONVERSATIONS;
-			case GET_USER:
-				return EVENT_MES_ACTION_GET_USER;
-			case GET_USERS:
-				return EVENT_MES_ACTION_GET_USERS;
-			case IS_DELIVERED:
-				return EVENT_MES_ACTION_DELIVERED;
-			case IS_READ:
-				return EVENT_MES_ACTION_READ;
-			case JOIN_CONVERSATION:
-				return EVENT_MES_ACTION_JOIN_CONVERSATION;
-			case LEAVE_CONVERSATION:
-			    return EVENT_MES_ACTION_LEAVE_CONVERSATION;
-			case MANAGE_NOTIFICATIONS:
-			    return EVENT_MES_ACTION_MANAGE_NOTIFICATIONS;
-			case REMOVE_CONVERSATION:
-			    return EVENT_MES_ACTION_REMOVE_CONVERSATION;
-			case REMOVE_MESSAGE:
-				return EVENT_MES_ACTION_REMOVE_MESSAGE;
-			case REMOVE_PARTICIPANTS:
-				return EVENT_MES_ACTION_REMOVE_PARTICIPANTS;
-			case RETRANSMIT_EVENTS:
-				return EVENT_MES_ACTION_RETRANSMIT_EVENTS;
-			case SEND_MESSAGE:
-				return EVENT_MES_ACTION_SEND_MESSAGE;
-			case SET_STATUS:
-				return EVENT_MES_ACTION_SET_STATUS;
-			case SUBSCRIBE:
-				return EVENT_MES_ACTION_SUBSCRIBE;
-			case TYPING_MESSAGE:
-				return EVENT_MES_ACTION_TYPING;
-			case UNSUBSCRIBE:
-				return EVENT_MES_ACTION_UNSUBSCRIBE;
-			case ACTION_UNKNOWN:
-			case REMOVE_MODERATORS:
-			case ADD_MODERATORS:
-				default:
-				return EVENT_MES_ACTION_UNKNOWN;
-		}
-	}
-
-	static String convertMessengerEventToString(MessengerEventType eventType) {
-    	switch (eventType) {
-			case IS_DELIVERED:
-				return EVENT_NAME_MES_DELIVERED;
-			case IS_READ:
-			    return EVENT_NAME_MES_READ;
-			case ON_CREATE_CONVERSATION:
-			    return EVENT_NAME_MES_CREATE_CONVERSATION;
-			case ON_EDIT_CONVERSATION:
-				return EVENT_NAME_MES_EDIT_CONVERSATION;
-			case ON_EDIT_MESSAGE:
-				return EVENT_NAME_MES_EDIT_MESSAGE;
-			case ON_EDIT_USER:
-				return EVENT_NAME_MES_EDIT_USER;
-			case ON_ERROR:
-			    return EVENT_NAME_MES_ERROR;
-			case ON_GET_CONVERSATION:
-				return EVENT_NAME_MES_GET_CONVERSATION;
-			case ON_GET_USER:
-				return EVENT_NAME_MES_GET_USER;
-			case ON_JOIN_CONVERSATION:
-			case ON_LEAVE_CONVERSATION:
-			    return "";
-			case ON_REMOVE_CONVERSATION:
-			    return EVENT_NAME_MES_REMOVE_CONVERSATION;
-			case ON_REMOVE_MESSAGE:
-				return EVENT_NAME_MES_REMOVE_MESSAGE;
-			case ON_RETRANSMIT_EVENTS:
-				return EVENT_NAME_MES_RETRANSMIT_EVENTS;
-			case ON_SEND_MESSAGE:
-				return EVENT_NAME_MES_SEND_MESSAGE;
-			case ON_SET_STATUS:
-				return EVENT_NAME_MES_SET_STATUS;
-			case ON_SUBSCRIBE:
-				return EVENT_NAME_MES_SUBSCRIBE;
-			case ON_TYPING:
-				return EVENT_NAME_MES_TYPING;
-			case ON_UNSUBSCRIBE:
-				return EVENT_NAME_MES_UNSUBSCRIBE;
-			case EVENT_UNKNOWN:
-				default:
-				return EVENT_NAME_MES_UNKNOWN;
 		}
 	}
 }

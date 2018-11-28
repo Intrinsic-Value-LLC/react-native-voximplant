@@ -57,6 +57,5 @@ export {
     LogLevel,
     VideoCodec,
     RequestAudioFocusMode,
-    Hardware,
-    Messaging
+    Hardware
 };
